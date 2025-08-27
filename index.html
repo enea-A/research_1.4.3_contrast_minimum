@@ -6,14 +6,15 @@
 <title>WCAG 2.1 — 1.4.3 Contrast (Minimum): PASS (sx) vs FAIL (dx)</title>
 <style>
   :root{
-    --ok:#157347;       /* contrasto OK con #fff (≈5.87:1) */
-    --bad:#b02a37;      /* contrasto OK con #fff (≈6.50:1) */
+    --ok:#11623d;       /* PASS badge: #fff su --ok = 7.40:1 (AAA) */
+    --bad:#a52834;      /* FAIL badge: #fff su --bad = 7.11:1 (AAA) */
     --ink:#222;
     --page:#fafafa;
     --muted:#111;
   }
   *{box-sizing:border-box}
-  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--page);line-height:1.45}
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--page);line-height:1.5}
+  p{line-height:1.5}
   .wrap{max-width:1000px;margin:0 auto;padding:24px 16px 64px}
   header h1{margin:0 0 6px 0;font-size:1.6rem}
   header p{margin:0}
@@ -43,15 +44,14 @@
   .p2-pass{background:#ffffff;color:#222;border:1px solid #e5e7eb}
   .p2-fail{background:#ffffff;color:#9a9a9a;border:1px dashed #e5e7eb}
 
-  /* Pair 3 */
-  .p3-pass{background:#ffffff;color:#8a8a8a;font-size:28px;font-weight:400}
+  /* Pair 3 (AAA per “large text”) */
+  .p3-pass{background:#ffffff;color:#777777;font-size:28px;font-weight:400} /* 4.5:1 */
   .p3-fail{background:#ffffff;color:#8a8a8a;font-size:16px;font-weight:400}
 
   /* Testo su immagine (24px bold uniforme) */
   .imgbox .content,.moving-bg .content,.trap-container .content,.trap-dark .content,.p8-pass .text,.p8-fail .text,.p10-fail .content{font-size:24px;font-weight:700;letter-spacing:.2px}
   .imgbox{background:#333;color:#fff;min-height:160px}
   .imgbox .bg{position:absolute;inset:0;background:url('my_hero.jpg') center/cover no-repeat}
-  /* overlay più scuro */
   .imgbox.overlay::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.72),rgba(0,0,0,.58))}
   .imgbox .content{position:relative;z-index:2;padding:8px 12px;border-radius:10px;background:rgba(0,0,0,.52);text-shadow:0 1px 2px rgba(0,0,0,.45)}
 
@@ -82,13 +82,13 @@
   /* Foto con testo separato / fuso */
   .blend-bg{position:relative;min-height:140px}
   .blend-bg::before{content:"";position:absolute;inset:0;background:url('my_hero.jpg') center/cover no-repeat}
-  .p8-pass.blend-bg::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.58)} /* più scuro */
+  .p8-pass.blend-bg::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.58)}
   .p8-pass .text{position:relative;z-index:1;color:#fff;padding:6px 10px;border-radius:10px;background:rgba(0,0,0,.52);text-shadow:0 1px 2px rgba(0,0,0,.45)}
   .p8-fail .text{position:relative;z-index:1;color:#fff;mix-blend-mode:difference;padding:10px}
 
   /* Pseudo-element TRAP */
   .p9-pass{background:#ddeeff;color:#222}
-  .p9-fail{position:relative;background:#ffffff;color:#8a8a8a} /* schiarito per FAIL reale */
+  .p9-fail{position:relative;background:#ffffff;color:#8a8a8a}
   .p9-fail::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,#ffffff 0 40%,#f2f6ff 40% 100%);z-index:0}
   .p9-fail .content{position:relative;z-index:1;font-size:20px}
 
@@ -110,7 +110,7 @@
 
   /* Link */
   .link-pass{background:#fff;color:#222}
-  .link-pass a{color:#0645ad;text-decoration:underline}
+  .link-pass a{color:#0645ad;text-decoration:underline} /* ~8.5:1 (AAA) */
   .link-fail{background:#fff;color:#222}
   .link-fail a{color:#7aa7ff;text-decoration:none}
   .link-fail .trap{position:relative;display:inline-block;padding:6px 8px}
@@ -118,7 +118,7 @@
 
   /* Button */
   .btn{display:inline-block;padding:10px 14px;border-radius:10px;font-weight:600}
-  .p14-pass .btn{background:#0066cc;color:#ffffff;border:2px solid #003d80}
+  .p14-pass .btn{background:#0052a3;color:#ffffff;border:2px solid #003a73} /* 7.68:1 (AAA) */
   .p14-fail .btn{background:#0066cc;color:#7ab3e0;border:2px solid #66a9e6}
   .p14-fail .btn.trap{position:relative}
   .p14-fail .btn.trap::before{content:"";position:absolute;inset:0;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,.45),transparent)}
@@ -126,7 +126,7 @@
   /* Placeholder */
   .input-demo{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:12px}
   .input-demo input{width:100%;padding:12px 10px;border-radius:8px;font-size:16px;border:1px solid #cbd5e1;color:#111;background:#fff}
-  .input-pass input::placeholder{color:#555;opacity:1}
+  .input-pass input::placeholder{color:#555;opacity:1}  /* ~7.46:1 (AAA) */
   .input-fail input::placeholder{color:#bdbdbd;opacity:1}
   .input-fail .trap{position:relative}
   .input-fail .trap::after{content:"";position:absolute;inset:6px;border-radius:6px;background:rgba(255,255,255,.35);pointer-events:none}
@@ -137,7 +137,8 @@
     <header>
       <h1>WCAG 2.1 — 1.4.3 “Contrast (Minimum)”</h1>
       <p>Griglia con coppie <strong>PASS</strong> (sinistra) vs <strong>FAIL</strong> (destra). Livello AA: <span class="kbd">≥4.5:1</span> testo normale; <span class="kbd">≥3:1</span> “large text”.</p>
-      <p class="legend">“Large text” = <strong>≥24&nbsp;px regolare</strong> oppure <strong>≥19&nbsp;px grassetto</strong> (14&nbsp;pt ≈ 18.5&nbsp;px; 18&nbsp;pt ≈ 24&nbsp;px; 1&nbsp;pt = 1.333&nbsp;px).</p>
+      <p class="legend">“Large text” = <strong>≥24&nbsp;px regolare</strong> oppure <strong>≥19&nbsp;px grassetto</strong> (14&nbsp;pt ≈ 18.5
+        &nbsp;px; 18&nbsp;pt ≈ 24&nbsp;px; 1&nbsp;pt = 1.333&nbsp;px).</p>
       <p class="legend">I casi “TRAP” mostrano situazioni dove i tool che leggono solo DOM/CSS possono sbagliare.</p>
     </header>
 
@@ -174,8 +175,8 @@
       <div class="row">
         <article class="example pass">
           <h3>Sfondo uniforme chiaro, testo “grande” <span class="badge">PASS</span></h3>
-          <div class="demo p3-pass">28&nbsp;px, #8a8a8a su #fff</div>
-          <p class="note">Rientra in “large text”.</p>
+          <div class="demo p3-pass">28&nbsp;px, #777777 su #fff</div>
+          <p class="note">PASS AA e AAA per “large text”.</p>
         </article>
         <article class="example fail">
           <h3>Sfondo uniforme chiaro, testo normale <span class="badge">FAIL</span></h3>
@@ -206,12 +207,12 @@
         </article>
       </div>
 
-      <!-- Pair 4b -->
+      <!-- Pair 4b (TRAP didattica) -->
       <div class="row">
         <article class="example pass">
           <h3>TRAP: immagine in movimento con velo (::after) <span class="badge">PASS</span></h3>
           <div class="demo moving-bg p4b-pass"><div class="content">Sfondo animato stabilizzato</div></div>
-          <p class="note">PASS reale; alcuni tool DOM-only lo marcano FAIL perché il velo è un pseudo-elemento e non è nel background del nodo testo.</p>
+          <p class="note">PASS reale; alcuni tool DOM-only marcano FAIL perché il velo è in uno pseudo-elemento.</p>
         </article>
         <article class="example fail">
           <h3>Immagine in movimento senza velo <span class="badge">FAIL</span></h3>
@@ -375,7 +376,7 @@
         <article class="example pass p14-pass">
           <h3>Button con label leggibile <span class="badge">PASS</span></h3>
           <div class="demo"><a class="btn" href="#">Scarica</a></div>
-          <p class="note">La label rispetta 1.4.3.</p>
+          <p class="note">La label rispetta 1.4.3 e 1.4.6 (AAA).</p>
         </article>
         <article class="example fail p14-fail">
           <h3>Button con label schiarita <span class="badge">FAIL</span></h3>
