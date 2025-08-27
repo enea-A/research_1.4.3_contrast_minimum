@@ -6,8 +6,8 @@
 <title>WCAG 2.1 — 1.4.3 Contrast (Minimum): PASS (sx) vs FAIL (dx)</title>
 <style>
   :root{
-    --ok:#1b8a5a;
-    --bad:#b02a37;
+    --ok:#157347;       /* contrasto OK con #fff (≈5.87:1) */
+    --bad:#b02a37;      /* contrasto OK con #fff (≈6.50:1) */
     --ink:#222;
     --page:#fafafa;
     --muted:#111;
@@ -137,7 +137,7 @@
     <header>
       <h1>WCAG 2.1 — 1.4.3 “Contrast (Minimum)”</h1>
       <p>Griglia con coppie <strong>PASS</strong> (sinistra) vs <strong>FAIL</strong> (destra). Livello AA: <span class="kbd">≥4.5:1</span> testo normale; <span class="kbd">≥3:1</span> “large text”.</p>
-      <p class="legend">“Large text” = <strong>≥24&nbsp;px regolare</strong> oppure <strong>≥19&nbsp;px grassetto</strong> (14&nbsp;pt ≈ 18.5&nbsp;px; 18&nbsp;pt ≈ 24&nbsp;px; 1&nbsp;pt = 1.333&nbsp;px).</p>
+      <p class="legend">“Large text” = <strong>≥24&nbsp;px regolare</strong> oppure <strong>≥19&nbsp;px grassetto</strong> (14&nbsp;pt ≈ 18.67&nbsp;px; 18&nbsp;pt ≈ 24&nbsp;px; 1&nbsp;pt = 1.333&nbsp;px).</p>
       <p class="legend">I casi “TRAP” mostrano situazioni dove i tool che leggono solo DOM/CSS possono sbagliare.</p>
     </header>
 
@@ -209,9 +209,9 @@
       <!-- Pair 4b -->
       <div class="row">
         <article class="example pass">
-          <h3>Immagine in movimento con velo <span class="badge">PASS</span></h3>
+          <h3>TRAP: immagine in movimento con velo (::after) <span class="badge">PASS</span></h3>
           <div class="demo moving-bg p4b-pass"><div class="content">Sfondo animato stabilizzato</div></div>
-          <p class="note">Il velo resta leggibile.</p>
+          <p class="note">PASS reale; alcuni tool DOM-only lo marcano FAIL perché il velo è un pseudo-elemento e non è nel background del nodo testo.</p>
         </article>
         <article class="example fail">
           <h3>Immagine in movimento senza velo <span class="badge">FAIL</span></h3>
