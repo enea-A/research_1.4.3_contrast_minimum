@@ -146,12 +146,12 @@
       <!-- Pair 1 -->
       <div class="row">
         <article class="example pass">
-          <h3>Sfondo scuro uniforme, testo bianco <span class="badge">PASS</span></h3>
+          <h3>1A - Sfondo scuro uniforme, testo bianco <span class="badge">PASS</span></h3>
           <div class="demo p1-pass equal">#fff su #0b3d5c</div>
           <p class="note">Rapporto molto alto.</p>
         </article>
         <article class="example fail">
-          <h3>Sfondo scuro uniforme, testo azzurro chiaro <span class="badge">FAIL</span></h3>
+          <h3>1B - Sfondo scuro uniforme, testo azzurro chiaro <span class="badge">FAIL</span></h3>
           <div class="demo p1-fail equal">#7ca2cc su #0b3d5c</div>
           <p class="note">Insufficiente per 4.5:1.</p>
         </article>
@@ -160,12 +160,12 @@
       <!-- Pair 2 -->
       <div class="row">
         <article class="example pass">
-          <h3>Sfondo uniforme chiaro, testo scuro <span class="badge">PASS</span></h3>
+          <h3>2A - Sfondo uniforme chiaro, testo scuro <span class="badge">PASS</span></h3>
           <div class="demo p2-pass equal">#222 su #fff</div>
           <p class="note">Molto oltre la soglia.</p>
         </article>
         <article class="example fail">
-          <h3>Sfondo uniforme chiaro, testo grigio tenue <span class="badge">FAIL</span></h3>
+          <h3>2B - Sfondo uniforme chiaro, testo grigio tenue <span class="badge">FAIL</span></h3>
           <div class="demo p2-fail equal">#9a9a9a su #fff</div>
           <p class="note">Contrasto troppo basso.</p>
         </article>
@@ -174,12 +174,12 @@
       <!-- Pair 3 -->
       <div class="row">
         <article class="example pass">
-          <h3>Sfondo uniforme chiaro, testo “grande” <span class="badge">PASS</span></h3>
+          <h3>3A - Sfondo uniforme chiaro, testo “grande” <span class="badge">PASS</span></h3>
           <div class="demo p3-pass">28&nbsp;px, #757575 su #fff</div>
           <p class="note">Testo grande conforme.</p>
         </article>
         <article class="example fail">
-          <h3>Sfondo uniforme chiaro, testo normale <span class="badge">FAIL</span></h3>
+          <h3>3B - Sfondo uniforme chiaro, testo normale <span class="badge">FAIL</span></h3>
           <div class="demo p3-fail">16&nbsp;px, #8a8a8a su #fff</div>
           <p class="note">Non raggiunge 4.5:1.</p>
         </article>
@@ -188,7 +188,7 @@
       <!-- Pair 4 -->
       <div class="row">
         <article class="example pass">
-          <h3>Foto con velo scuro (overlay) <span class="badge">PASS</span></h3>
+          <h3>4A - Foto con velo scuro (overlay) <span class="badge">PASS</span></h3>
           <figure class="demo imgbox overlay">
             <div class="bg" aria-hidden="true"></div>
             <div class="content">Testo leggibile sopra immagine</div>
@@ -197,7 +197,7 @@
           <p class="note">Velo e riquadro scuri stabilizzano il contrasto.</p>
         </article>
         <article class="example fail">
-          <h3>Foto senza velo <span class="badge">FAIL</span></h3>
+          <h3>4B - Foto senza velo <span class="badge">FAIL</span></h3>
           <figure class="demo imgbox">
             <div class="bg" aria-hidden="true"></div>
             <div class="content" style="background:none">Zone chiare → insufficiente</div>
@@ -210,12 +210,12 @@
       <!-- Pair 4b (TRAP didattica) -->
       <div class="row">
         <article class="example pass">
-          <h3>TRAP: immagine in movimento con velo (::after) <span class="badge">PASS</span></h3>
+          <h3>4A - Immagine in movimento con velo (::after) <span class="badge">PASS</span></h3>
           <div class="demo moving-bg p4b-pass"><div class="content">Sfondo animato stabilizzato</div></div>
           <p class="note">PASS reale; alcuni tool DOM-only marcano FAIL perché il velo è in uno pseudo-elemento.</p>
         </article>
         <article class="example fail">
-          <h3>Immagine in movimento senza velo <span class="badge">FAIL</span></h3>
+          <h3>4B - Immagine in movimento senza velo <span class="badge">FAIL</span></h3>
           <div class="demo moving-bg"><div class="content">Testo su texture mobile</div></div>
           <p class="note">Il testo entra in aree troppo chiare.</p>
         </article>
@@ -224,12 +224,12 @@
       <!-- Pair 5 -->
       <div class="row">
         <article class="example pass">
-          <h3>Sfondo uniforme dichiarato <span class="badge">PASS</span></h3>
+          <h3>5A - Sfondo uniforme dichiarato <span class="badge">PASS</span></h3>
           <div class="demo equal" style="background:#ffffff;border:1px solid #e5e7eb;color:#222">#222 su #fff</div>
           <p class="note">Caso semplice nel DOM.</p>
         </article>
         <article class="example fail">
-          <h3>Testo dentro immagine (raster) <span class="badge">FAIL</span></h3>
+          <h3>5B - Testo dentro immagine (raster) <span class="badge">FAIL</span></h3>
           <canvas class="p5-fail" id="p5canvas" aria-label="Canvas con testo poco leggibile"></canvas>
           <p class="note">Non misurabile dal DOM.</p>
         </article>
@@ -238,12 +238,12 @@
       <!-- Pair 6: DOM vs reale -->
       <div class="row">
         <article class="example pass">
-          <h3>Sfondo uniforme dichiarato <span class="badge">PASS</span></h3>
+          <h3>6A - Sfondo uniforme dichiarato <span class="badge">PASS</span></h3>
           <div class="demo equal" style="background:#ffffff;color:#222;border:1px solid #e5e7eb;">#222 su #fff</div>
           <p class="note">Nessuna sorpresa.</p>
         </article>
         <article class="example fail">
-          <h3>TRAP: sfondo reale è un’immagine <span class="badge">FAIL</span></h3>
+          <h3>6B - Sfondo reale è un’immagine <span class="badge">FAIL</span></h3>
           <div class="demo trap-container">
             <img src="my_hero.jpg" alt="" aria-hidden="true">
             <div class="content">Il DOM dice #fff, ma sotto c’è un’immagine.</div>
@@ -255,12 +255,12 @@
       <!-- Pair 6b -->
       <div class="row">
         <article class="example pass">
-          <h3>Sfondo reale nero uniforme, testo bianco <span class="badge">PASS</span></h3>
+          <h3>6C - Sfondo reale nero uniforme, testo bianco <span class="badge">PASS</span></h3>
           <div class="demo equal" style="background:#000;color:#fff;border:1px solid #111">#fff su #000</div>
           <p class="note">Contrasto massimo.</p>
         </article>
         <article class="example fail">
-          <h3>TRAP: DOM dice nero, sotto è un’immagine <span class="badge">FAIL</span></h3>
+          <h3>6D - Sfondo nero, ma sotto vi è un’immagine <span class="badge">FAIL</span></h3>
           <div class="demo trap-dark">
             <img src="my_hero.jpg" alt="" aria-hidden="true">
             <div class="content">Il DOM dice #000, ma sotto c’è un’immagine.</div>
@@ -272,12 +272,12 @@
       <!-- Pair 7 -->
       <div class="row">
         <article class="example pass">
-          <h3>Sfondo uniforme azzurro, testo scuro <span class="badge">PASS</span></h3>
+          <h3>7A - Sfondo uniforme azzurro, testo scuro <span class="badge">PASS</span></h3>
           <div class="demo p7-pass equal">Contrasto stabile</div>
           <p class="note">Colore uniforme.</p>
         </article>
         <article class="example fail">
-          <h3>Sfondo a gradiente, testo grigio <span class="badge">FAIL</span></h3>
+          <h3>7B - Sfondo a gradiente, testo grigio <span class="badge">FAIL</span></h3>
           <div class="demo p7-fail equal">Porzioni molto chiare → rischio</div>
           <p class="note">In alcune zone è troppo chiaro.</p>
         </article>
@@ -286,12 +286,12 @@
       <!-- Pair 8 -->
       <div class="row">
         <article class="example pass p8-pass">
-          <h3>Foto con velo scuro (testo separato) <span class="badge">PASS</span></h3>
+          <h3>8A - Foto con velo scuro (testo separato) <span class="badge">PASS</span></h3>
           <div class="demo blend-bg"><div class="text">Testo normale con velo</div></div>
           <p class="note">Il velo garantisce il contrasto.</p>
         </article>
         <article class="example fail p8-fail">
-          <h3>Foto con testo che si mescola allo sfondo <span class="badge">FAIL</span></h3>
+          <h3>8B - Foto con testo che si mescola allo sfondo <span class="badge">FAIL</span></h3>
           <div class="demo blend-bg"><div class="text">Colore dipende dallo sfondo</div></div>
           <p class="note">Il colore dipende dallo sfondo. Contrasto imprevedibile.</p>
         </article>
@@ -300,12 +300,12 @@
       <!-- Pair 9 -->
       <div class="row">
         <article class="example pass">
-          <h3>Sfondo uniforme (blu chiaro dichiarato) <span class="badge">PASS</span></h3>
+          <h3>9A - Sfondo uniforme (blu chiaro dichiarato) <span class="badge">PASS</span></h3>
           <div class="demo p9-pass equal">Testo #222 su blu chiaro</div>
           <p class="note">Fondo dichiarato = misurato.</p>
         </article>
         <article class="example fail">
-          <h3>TRAP: sfondo aggiunto con ::before <span class="badge">FAIL</span></h3>
+          <h3>9B - Sfondo aggiunto con ::before <span class="badge">FAIL</span></h3>
           <div class="demo p9-fail"><div class="content" style="font-size:20px">Zona centrale molto chiara</div></div>
           <p class="note">Lo sfondo reale non è nel bg del nodo.</p>
         </article>
@@ -314,12 +314,12 @@
       <!-- Pair 10 -->
       <div class="row">
         <article class="example pass">
-          <h3>Sfondo scuro uniforme, testo in primo piano <span class="badge">PASS</span></h3>
+          <h3>10A - Sfondo scuro uniforme, testo in primo piano <span class="badge">PASS</span></h3>
           <div class="demo p10-pass">#fff su #0b3d5c, nessun velo sopra</div>
           <p class="note">Valori reali = DOM.</p>
         </article>
         <article class="example fail">
-          <h3>TRAP: sfondo scuro, testo con velo chiaro sopra <span class="badge">FAIL</span></h3>
+          <h3>10B - Sfondo scuro, testo con velo chiaro sopra <span class="badge">FAIL</span></h3>
           <div class="demo p10-fail"><div class="content">Il velo schiarisce il testo</div></div>
           <p class="note">Contrasto reale ridotto.</p>
         </article>
@@ -328,12 +328,12 @@
       <!-- Pair 11 -->
       <div class="row">
         <article class="example pass">
-          <h3>Testo pieno ad alto contrasto <span class="badge">PASS</span></h3>
+          <h3>11A - Testo pieno ad alto contrasto <span class="badge">PASS</span></h3>
           <div class="demo p11-pass equal" style="font-weight:800">TESTO SOLIDO</div>
           <p class="note">Colore dichiarato e misurabile.</p>
         </article>
         <article class="example fail">
-          <h3>Testo riempito con immagine <span class="badge">FAIL</span></h3>
+          <h3>11B -Testo riempito con immagine <span class="badge">FAIL</span></h3>
           <div class="demo clip-wrap"><div class="clip-text">IMMAGINE</div></div>
           <p class="note">Il colore dipende dai pixel.</p>
         </article>
@@ -342,12 +342,12 @@
       <!-- Pair 12 -->
       <div class="row">
         <article class="example pass">
-          <h3>Testo opaco (100%) su #fff <span class="badge">PASS</span></h3>
+          <h3>12A - Testo opaco (100%) su #fff <span class="badge">PASS</span></h3>
           <div class="demo p12-pass equal"><div class="text">#222 su #fff (opaco)</div></div>
           <p class="note">Rapporto stabile.</p>
         </article>
         <article class="example fail">
-          <h3>Testo semitrasparente su #fff <span class="badge">FAIL</span></h3>
+          <h3>12B - Testo semitrasparente su #fff <span class="badge">FAIL</span></h3>
           <div class="demo p12-fail equal"><div class="text">#222 con opacity .45</div></div>
           <p class="note">La trasparenza abbassa il contrasto.</p>
         </article>
@@ -356,14 +356,14 @@
       <!-- Pair 13 -->
       <div class="row">
         <article class="example pass">
-          <h3>Link distinguibile (scuro + sottolineato) <span class="badge">PASS</span></h3>
+          <h3>13A - Link distinguibile (scuro + sottolineato) <span class="badge">PASS</span></h3>
           <div class="demo link-pass">
             Testo normale e <a href="#">link sottolineato</a> (colore #0645ad).
           </div>
           <p class="note">Contrasto + non solo colore.</p>
         </article>
         <article class="example fail">
-          <h3>Link solo-colore, troppo chiaro <span class="badge">FAIL</span></h3>
+          <h3>13B - Link solo-colore, troppo chiaro <span class="badge">FAIL</span></h3>
           <div class="demo link-fail">
             <span class="trap">Questo è un <a href="#">link</a> non sottolineato.</span>
           </div>
@@ -374,12 +374,12 @@
       <!-- Pair 14 -->
       <div class="row">
         <article class="example pass p14-pass">
-          <h3>Button con label leggibile <span class="badge">PASS</span></h3>
+          <h3>14A - Button con label leggibile <span class="badge">PASS</span></h3>
           <div class="demo"><a class="btn" href="#">Scarica</a></div>
           <p class="note">La label rispetta 1.4.3 e 1.4.6 (AAA).</p>
         </article>
         <article class="example fail p14-fail">
-          <h3>Button con label schiarita <span class="badge">FAIL</span></h3>
+          <h3>14B - Button con label schiarita <span class="badge">FAIL</span></h3>
           <div class="demo"><a class="btn trap" href="#">Scarica</a></div>
           <p class="note">Il gradiente schiarisce la label.</p>
         </article>
@@ -388,12 +388,12 @@
       <!-- Pair 15 -->
       <div class="row">
         <article class="example pass">
-          <h3>Placeholder leggibile <span class="badge">PASS</span></h3>
+          <h3>15A - Placeholder leggibile <span class="badge">PASS</span></h3>
           <div class="demo input-demo input-pass"><input placeholder="Cerca documenti…"></div>
           <p class="note">È testo e deve essere leggibile.</p>
         </article>
         <article class="example fail">
-          <h3>Placeholder grigio tenue <span class="badge">FAIL</span></h3>
+          <h3>15B - Placeholder grigio tenue <span class="badge">FAIL</span></h3>
           <div class="demo input-demo input-fail"><div class="trap"><input placeholder="Cerca documenti…"></div></div>
           <p class="note">#bdbdbd su #fff non arriva a 4.5:1.</p>
         </article>
